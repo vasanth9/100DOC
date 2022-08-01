@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax Effect</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="label__container">
+        <label>Game Speed: <span id="speed">5</span></label>
+        <input
+          type="range"
+          min="0"
+          max="30"
+          step="1"
+          value="5"
+          id="gameSpeed"
+        />
+      </div>
+      <canvas id="parallaxCanvas"></canvas>
+    </div>
+    <script src="./scripts.js"></script>
+  </body>
+</html>
