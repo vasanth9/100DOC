@@ -38,6 +38,21 @@ def reverseFile(fileName):
     fileWrite.close()
 
 
+def balanceBrackets(string):
+    S = ArrayStack()
+    left='({['
+    right=')}]'
+    for bracket in string:
+        if bracket in left:
+            S.push(bracket)
+        elif bracket in right:
+            if S.is_empty():
+                return False
+            if left.index(S.pop()) != right.index(bracket):
+                return False
+    return S.is_empty()
+        
+
 
 
 if __name__ == "__main__":
@@ -53,3 +68,7 @@ if __name__ == "__main__":
 
     # reverse the contents of a file
     reverseFile('./Stack.txt')
+    print(balanceBrackets('(((()))){{{}}}}'))
+    print(balanceBrackets('[(((()))){{{}}}]'))
+
+
