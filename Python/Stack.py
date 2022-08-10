@@ -52,6 +52,26 @@ def balanceBrackets(string):
                 return False
     return S.is_empty()
         
+def is_Matched_HTML(raw):
+    S=ArrayStack()
+    j = raw.find('<')
+    while j!=-1:
+        if not S.is_empty():
+            print(S.top())
+        k = raw.find('>',j+1)
+        if k == -1:
+            return False
+        tag = raw[j+1:k]
+        if not tag.startswith('/'):
+            S.push(tag)
+        else:
+            if S.is_empty():
+                return False
+            if tag[1:] != S.pop():
+                return False
+        j = raw.find('<',k+1)
+    return S.is_empty()
+
 
 
 
@@ -67,8 +87,14 @@ if __name__ == "__main__":
     #     print(S.pop())
 
     # reverse the contents of a file
+    html_fail_String = '<body><center><h1>The Little Boat </h1></center>'
+    html_pass_String = '<body><center><h1>The Little Boat </h1></center></body>'
+
     reverseFile('./Stack.txt')
     print(balanceBrackets('(((()))){{{}}}}'))
     print(balanceBrackets('[(((()))){{{}}}]'))
+    print(is_Matched_HTML(html_fail_String))
+    print(is_Matched_HTML(html_pass_String))
+
 
 
