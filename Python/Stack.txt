@@ -1,0 +1,41 @@
+    
+    # reverse the contents of a file
+
+    #     print(S.pop())
+    # for i in range(10):
+    # print("Now poping the Array")
+
+    #     S.push(x)
+    #     x=input()
+    # for i in range(10):
+    # print("Enter the Values into Stack")
+    # S = ArrayStack()
+if __name__ == "__main__":
+
+
+        return self._data.pop()
+            raise Empty('Stack is Empty')
+        if self.is_empty():
+    def pop(self):
+    
+        return self._data[-1]
+            raise Empty('Stack is Empty')
+        if self.is_empty():
+    def top(self):
+    
+        self._data.append(e)
+    def push(self,e):
+    
+        return len(self._data) == 0
+    def is_empty(self):
+    
+        return len(self._data)
+    def __len__(self):
+    
+        self._data = []
+    def __init__(self):
+
+class ArrayStack:
+
+
+from queue import Empty
